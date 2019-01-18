@@ -1,1 +1,0 @@
-# Scala-CRUD-wd-Lagom
