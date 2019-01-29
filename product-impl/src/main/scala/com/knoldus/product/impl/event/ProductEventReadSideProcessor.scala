@@ -46,7 +46,7 @@ class ProductEventReadSideProcessor(db: CassandraSession, readSide: CassandraRea
     })).map(_ => db.prepare("UPDATE PRODUCT SET price=?,title=?,description=? where id =?").map(ps => {
       updateProduct = ps
       println("Successfully updated")
-      Done.getInstance()
+      Done
     })).flatten
 
   private def insertProduct(product: Product): Future[List[BoundStatement]] = {
